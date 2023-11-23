@@ -1,0 +1,7 @@
+*{
+    margin: 1rem;
+  }
+  
+  .videos-grid{
+    display: flex;
+  }

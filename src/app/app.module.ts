@@ -18,7 +18,6 @@ import { LoginComponent } from './pages/login/login.component';
     // HeaderComponent,
     // FooterComponent,
     NewsComponent
-    // VideoComponent,
     // UserComponent,
     // LoginComponent
   ],
