@@ -7,17 +7,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NoticesComponent } from './pages/notices/notices.component';
+import { NewsComponent } from './pages/news/news.component';
 import { VideoComponent } from './pages/video/video.component';
 import { UserComponent } from './pages/user/user.component';
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
     // HeaderComponent,
     // FooterComponent,
-    // NoticesComponent,
+    NewsComponent
     // VideoComponent,
     // UserComponent,
     // LoginComponent
