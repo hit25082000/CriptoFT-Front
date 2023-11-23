@@ -3,7 +3,7 @@ import { CryptoInfo } from './crypto-info';
 import { CryptoService } from './crypto.service';
 
 @Component({
-  selector: 'app-principal',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
