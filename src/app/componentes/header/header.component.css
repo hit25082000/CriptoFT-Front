@@ -1,12 +1,6 @@
 div {
     height: 8vh;
     background-color: rgb(90, 77, 77);
-    color: white;
-    text-decoration: none;
-  }
-  
-  *{
-    text-decoration: none;
   }
   
   .example-spacer {
@@ -14,7 +8,9 @@ div {
   }
   
   a{
+    color: white;
     margin-right: 2rem;
+    text-decoration: none;
   }
   
   .logo{
