@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FooterModule } from "./componentes/footer/footer.module";
-import { HeaderModule } from "./componentes/header/header.module";
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from "./main/main.component";
+import { FooterComponent } from "./footer/footer.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    imports: [CommonModule, RouterOutlet, FooterModule, HeaderModule]
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, HeaderComponent, MainComponent, FooterComponent,HttpClientModule]
 })
 export class AppComponent {
-  title = 'CriptoFTs';
+  title = 'CriptoFT';
 }

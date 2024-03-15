@@ -1,23 +1,31 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { HomeComponent } from './pages/home/home.component';
-import { NewsComponent } from './pages/news/news.component';
-import { VideoComponent } from './pages/video/video.component';
-import { UserComponent } from './pages/user/user.component';
-import { LoginComponent } from './pages/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './main/home/home.component';
+import { NewsComponent } from './main/news/news.component';
+import { LoginComponent } from './main/user/login/login.component';
+import { UserComponent } from './main/user/user.component';
+import { SigninComponent } from './main/user/signin/signin.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'video', component: VideoComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+  {path: '',
+   component: HomeComponent},
+  {path: 'home',
+   component: HomeComponent},
+  {path: 'news',
+  component: NewsComponent},
+  {
+    path: 'user',
+    component: UserComponent,
+    children: [
+      {
+        path: '',
+        component: LoginComponent,
+      },
+      {
+        path: 'signin',
+        component: SigninComponent,
+      },
+    ],
+  },
+  {path: '**', component: PageNotFoundComponent}
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
