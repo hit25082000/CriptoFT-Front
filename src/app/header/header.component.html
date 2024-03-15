@@ -1,12 +1,17 @@
-<div>
-    <a>
-      <i><img class="logo" src="../../../assets/img/logoSnome.png" width="50" alt="logo do site"></i>
-    </a>
-    <a class="navbar-text" routerLink="/home">Home</a>
-    <a class="navbar-text" routerLink="/news">Noticias</a>
-    <span class="example-spacer"></span>
-    <div *ngIf="login" >
-        <a class="navbar-text" routerLink="/user">Usuario</a>
+<header>
+  <section>
+  <div>
+      <a>
+        <i><img class="logo" src="../../../assets/img/logoSnome.png" width="50" alt="logo do site"></i>
+      </a>
+      <a class="navbar-text" routerLink="/home">Home</a>
+      <a class="navbar-text" routerLink="/news">Noticias</a>
+      <a class="navbar-text" routerLink="/videos">Aulas</a>
+      <span class="example-spacer"></span>
     </div>
-</div>
+      <div *ngIf="login" >
+        <a class="navbar-text" routerLink="/user">Usuario</a>
+      </div>
+  </section>
+</header>
 
