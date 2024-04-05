@@ -1,22 +1,52 @@
-<form class="form mt-4" (ngSubmit)="login()" [formGroup]="loginForm">
-  <div class="example-full-width" >
-    <label class="text">Usuário</label>
-    <input matInput formControlName="userName" placeholder="Siclano Beltrano"
-      name="usuario">
-    <div ></div>
-  </div>
-  <div class="example-full-width" >
-    <label class="text">Senha</label>
-    <input type="password" matInput formControlName="senha" placeholder="**********" name="password">
-    <div *ngIf="loginForm.get('userName')?.errors?.['required']">
-      Campo <strong>OBRIGATORIO</strong>
+<div class="paginaLogin">
+  <form class="form mt-4" (ngSubmit)="login()" [formGroup]="loginForm">
+    <h1>Benvindo ao CriptoFT</h1>
+    <div class="entradas">
+      <label class="text">Usuário</label>
+      <input
+        matInput
+        formControlName="userName"
+        placeholder="Insira o usuário"
+        name="usuario"
+      />
     </div>
-  </div>
-  <app-recaptcha [config]="captchaConfig" ></app-recaptcha>
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
-      Logar
+    <div class="entradas">
+      <label class="text">Senha</label>
+      <input
+        type="password"
+        matInput
+        formControlName="senha"
+        placeholder="Insira a senha"
+        name="password"
+      />
+      <div *ngIf="loginForm.get('userName')?.errors?.['required']"></div>
+    </div>
+    <div class="recaptcha">
+      <app-recaptcha [config]="captchaConfig"></app-recaptcha>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loginForm.invalid"
+    >
+      Entrar
     </button>
-  <p><span> Não é um usuário ? <a [routerLink]="['novousuario']">Cadastre-se!</a></span></p>
-  <p><span> Esqueceu sua senha ? <a [routerLink]="['solicitar-reset-senha']">Esqueci minha senha!</a></span></p>
-</form>
-
+    <p class="textos">
+      <span>
+        Não é um usuário ?
+        <a [routerLink]="['novousuario']">Cadastre-se!</a></span
+      >
+    </p>
+    <p class="textos">
+      <span>
+        Esqueceu sua senha ?
+        <a [routerLink]="['solicitar-reset-senha']"
+          >Esqueci minha senha!</a
+        ></span
+      >
+    </p>
+  </form>
+  <div class="imagem">
+    <img src="../../../../assets/img/FTCrypto.png" alt="Imagem" />
+  </div>
+</div>

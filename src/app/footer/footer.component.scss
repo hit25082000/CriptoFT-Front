@@ -1,5 +1,15 @@
-footer{
-  background-color: green;
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #0c151a;
   width: 100%;
   min-height: 15vh;
+  color: #fff;
+  border-top: 5px solid #353b41;
+}
+
+.rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
