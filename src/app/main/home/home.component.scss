@@ -1,5 +1,6 @@
 .container {
   background-color: #79a8ae;
+  padding-bottom: 15px;
 }
 
 .crypto-roulette{
@@ -25,14 +26,20 @@ h2{
 .courses-carousel {
   display: flex;
   overflow-x: auto;
-  padding: 10px;
 }
 
 .video-preview {
   flex: 0 0 auto;
-  width: 400px;
+  width: 300px;
   height: 200px;
   margin-right: 10px;
+  transition: transform 0.3s ease;
+  text-decoration: double;
+  text-transform: none;
+}
+
+.video-preview:hover {
+  transform: translateY(-5px);
 }
 
 .video-thumbnail {
@@ -51,7 +58,6 @@ h2{
 .news-carousel {
   display: flex;
   overflow-x: auto;
-  padding: 10px;
 }
 
 .news-item {
@@ -85,4 +91,29 @@ h2{
   font-size: 14px;
   line-height: 1.4;
   color: #666;
+}
+
+.scroll-button {
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #333;
+  cursor: pointer;
+  z-index: 1;
+  padding: 15px;
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+.videos-container,
+.news-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
 }

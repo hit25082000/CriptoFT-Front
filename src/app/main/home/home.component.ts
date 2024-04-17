@@ -70,23 +70,33 @@ export class HomeComponent {
     },
   ];
 
-  constructor() {}
-  /* constructor(private homeService: HomeService) {}
-
-  cryptocurrencies: any[] = [];
-
-  ngOnInit() {
-    this.loadCryptocurrencies();
+  scrollLeftVideos() {
+    const container = document.querySelector('.videos-container');
+    if (container) {
+      container.scrollLeft -= 200;
+    }
   }
 
-  loadCryptocurrencies() {
-    this.homeService.getCryptocurrencies().subscribe(
-      data => {
-        this.cryptocurrencies = data;
-      },
-      error => {
-        console.error('Erro ao carregar as criptomoedas:', error);
-      }
-    );
-  } */
+  scrollRightVideos() {
+    const container = document.querySelector('.videos-container');
+    if (container) {
+      container.scrollLeft += 200;
+    }
+  }
+
+  scrollLeftNews() {
+    const container = document.querySelector('.news-container');
+    if (container) {
+      container.scrollLeft -= 200;
+    }
+  }
+
+  scrollRightNews() {
+    const container = document.querySelector('.news-container');
+    if (container) {
+      container.scrollLeft += 200;
+    }
+  }
+
+  constructor() {}
 }
