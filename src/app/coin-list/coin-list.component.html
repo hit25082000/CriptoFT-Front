@@ -1,0 +1,24 @@
+<main>
+  <h1>Principais Criptomoedas</h1>
+  <div class="dadosCripto" *ngIf="criptoMoedas && criptoMoedas.length > 0">
+    <div class="lista" *ngFor="let moeda of criptoMoedas">
+      <img class="icone" src="{{ moeda.iconUrl }}" alt="icone das moedas" />
+      <div class="texto">
+        <p>{{ moeda.symbol }}</p>
+        <p>{{ moeda.name }}</p>
+        <p>$:{{ moeda.price }}</p>
+        <p
+          [ngClass]="{
+            negativo: moeda.change < 0,
+            positivo: moeda.change >= 0
+          }"
+        >
+          {{ moeda.change }}%
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!criptoMoedas || criptoMoedas.length === 0">
+    <p>Nenhuma Criptomoeda disponível.</p>
+  </div>
+</main>

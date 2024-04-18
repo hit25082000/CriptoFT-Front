@@ -1,0 +1,51 @@
+main {
+  height: 100%;
+  color: aliceblue;
+}
+
+h1 {
+  padding: 50px 0 0 100px;
+}
+
+.dadosCripto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 100px;
+  max-width: 1240px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.lista {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  color: black;
+  background-color: aliceblue;
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.texto {
+  font-size: 20px;
+}
+
+.icone {
+  width: 60px;
+}
+
+.negativo {
+  color: red;
+  font-weight: 600;
+}
+
+.positivo {
+  color: green;
+  font-weight: 600;
+}
