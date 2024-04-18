@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink} from '@angular/router';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+import { Router, RouterLink, RouterOutlet} from '@angular/router';
 import { FormBuilder, FormGroup,  ReactiveFormsModule, Validators } from '@angular/forms';
 import { RecaptchaService } from '../../../components/recaptcha/recaptcha.service';
 import { MensageService } from '../../../components/mensage/mensage.service';
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   standalone:true,
-  imports:[RouterLink,RecaptchaComponent,ReactiveFormsModule,CommonModule,HttpClientModule],
+  imports:[RouterLink,RecaptchaComponent,ReactiveFormsModule,CommonModule,HttpClientModule, RouterOutlet],
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
   };
 
   loginForm!: FormGroup;
+Sign: any;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -42,6 +43,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private mensageService: MensageService,
     private tokenService: TokenService,
+    private renderer: Renderer2,
+    private el: ElementRef,
     private recaptchaService:RecaptchaService) {
       this.recaptchaService.captchStatus.subscribe((status)=>{
         this.captchaStatus = status;
