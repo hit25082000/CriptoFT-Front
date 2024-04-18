@@ -1,22 +1,38 @@
-<form class="form mt-4" (ngSubmit)="login()" [formGroup]="loginForm">
-  <div class="example-full-width" >
-    <label class="text">Usuário</label>
-    <input matInput formControlName="userName" placeholder="Siclano Beltrano"
-      name="usuario">
-    <div ></div>
-  </div>
-  <div class="example-full-width" >
-    <label class="text">Senha</label>
-    <input type="password" matInput formControlName="senha" placeholder="**********" name="password">
-    <div *ngIf="loginForm.get('userName')?.errors?.['required']">
-      Campo <strong>OBRIGATORIO</strong>
+<div id="firstLogin">
+  <div class="container" id="container">
+    <div class="form-container sign-in">
+      <form class="form mt-4" (ngSubmit)="login()" [formGroup]="loginForm">
+        <h1>Login</h1>
+        <div class="example-full-width">
+          <label class="text">Usuário</label>
+          <input matInput formControlName="userName" placeholder="Siclano Beltrano" name="usuario">
+          <div></div>
+        </div>
+        <div class="example-full-width">
+          <label class="text">Senha</label>
+          <input type="password" matInput formControlName="senha" placeholder="**********" name="password">
+        </div>
+        <app-recaptcha [config]="captchaConfig"></app-recaptcha>
+        <div class="textObr" *ngIf="loginForm.get('userName')?.errors?.['required']">Campo obrigatório</div>
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Logar</button>
+        <p><span> Esqueceu sua senha ? <a [routerLink]="['solicitar-reset-senha']">Esqueci minha senha!</a></span></p>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Bem Vindo de Volta!</h1>
+          <p>Faça login com suas redes sociais</p>
+          <div class="social-icons">
+            <a href="#" class="icon"><img class="google-plus" src="../../../../assets/img/google-plus.png"></a>
+            <a href="#" class="icon"><img class="facebook" src="../../../../assets/img/facebook-icon.png"></a>
+            <a href="#" class="icon"><img class="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"></a>
+            <a href="#" class="icon"><img class="linkedin" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"></a>
+          </div>
+          <p>Ou crie sua conta usando suas credênciais</p>
+          <button class="hidden" id="login" routerLink="/user/signin">Registre-se</button>
+        </div>
+      </div>
     </div>
   </div>
-  <app-recaptcha [config]="captchaConfig" ></app-recaptcha>
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
-      Logar
-    </button>
-  <p><span> Não é um usuário ? <a [routerLink]="['novousuario']">Cadastre-se!</a></span></p>
-  <p><span> Esqueceu sua senha ? <a [routerLink]="['solicitar-reset-senha']">Esqueci minha senha!</a></span></p>
-</form>
-
+</div>

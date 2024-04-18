@@ -1,1 +1,36 @@
-<p>home works!</p>
+<div class="container">
+  <div class="crypto-roulette">
+  </div>
+
+  <img src="..\..\assets\img\IF_Criptoativos.png" alt="Imagem" class="banner-image">
+
+  <h2>Notícias do Dia:</h2>
+
+  <div class="news-carousel">
+    <button class="scroll-button left" (click)="scrollLeftNews()">‹</button>
+    <div class="news-container">
+      <div class="news-item" *ngFor="let item of news">
+        <a [href]="item.url" target="_blank">
+          <span>{{ item.title }}</span>
+        </a>
+      </div>
+    </div>
+    <button class="scroll-button right" (click)="scrollRightNews()">›</button>
+  </div>
+
+  <h2>Cursos:</h2>
+
+  <div class="courses-carousel">
+    <button class="scroll-button left" (click)="scrollLeftVideos()">‹</button>
+    <div class="videos-container">
+      <div class="video-preview" *ngFor="let video of videos">
+        <a [href]="video.url">
+          <div class="video-thumbnail">
+            <span>{{ video.title }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <button class="scroll-button right" (click)="scrollRightVideos()">›</button>
+  </div>
+</div>

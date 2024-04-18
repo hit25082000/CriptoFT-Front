@@ -1,3 +1,4 @@
+import { RecaptchaService } from './../../../components/recaptcha/recaptcha.service';
 import { NewUser } from './new-user';
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -9,11 +10,12 @@ import { EqualsPasswordValidator, NumberValidator, SpecialCharValidator, UperCha
 import { MensageComponent } from '../../../components/mensage/mensage.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { RecaptchaComponent } from '../../../components/recaptcha/recaptcha.component';
 
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule,MensageComponent,RouterLink,CommonModule],
+  imports: [ReactiveFormsModule,MensageComponent,RouterLink,CommonModule, RecaptchaComponent],
   providers: [FormBuilder],
   selector: 'app-novo-usuario',
   templateUrl: './signin.component.html',
@@ -23,14 +25,35 @@ import { HttpClientModule } from '@angular/common/http';
 export class SigninComponent implements OnInit {
   newUserForm!: FormGroup;
   loading = false;
+  captchaStatus:any = '';
+
+  captchaConfig:any = {
+    type:2,
+    length:6,
+    cssClass:'custom',
+    back: {
+     stroke:"#2F9688",
+     solid:"#f2efd2"
+    } ,
+    font:{
+      color:"#000000",
+      size:"35px"
+    }
+  };
 
   constructor(
     private mensageService: MensageService,
     private formBuilder: FormBuilder,
     private signinService: SigninService,
-    private router: Router
-  ) {
-  }
+    private router: Router,
+    private recaptchaService:RecaptchaService) {
+      this.recaptchaService.captchStatus.subscribe((status)=>{
+        this.captchaStatus = status;
+         if (status == true) {
+            this.newUserForm.get('captcha')!.updateValueAndValidity();
+        }
+      });
+    }
 
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group(

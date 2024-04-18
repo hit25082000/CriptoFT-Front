@@ -59,6 +59,9 @@ export class RecaptchaComponent implements OnChanges {
     }
   }
   createCaptcha() {
+    if (typeof document === 'undefined') {
+      return;
+    }
 
     switch(this.config.type) {
       case 1: // only alpha numaric degits to type
@@ -84,27 +87,26 @@ export class RecaptchaComponent implements OnChanges {
 
 
     setTimeout(() => {
-      let captcahCanvas: any = document.getElementById("captcahCanvas");
-      var ctx = captcahCanvas.getContext("2d");
-      ctx.fillStyle = this.config.back.solid;
-      ctx.fillRect(0, 0, captcahCanvas.width, captcahCanvas.height);
+        let captcahCanvas: any = document.getElementById("captcahCanvas");
+        var ctx = captcahCanvas.getContext("2d");
+        ctx.fillStyle = this.config.back.solid;
+        ctx.fillRect(0, 0, captcahCanvas.width, captcahCanvas.height);
 
-      ctx.beginPath();
+        ctx.beginPath();
 
-      captcahCanvas.style.letterSpacing = 15 + "px";
-      ctx.font = this.config.font.size + " " + this.config.font.family;
-      ctx.fillStyle = this.config.font.color;
-      ctx.textBaseline = "middle";
-      ctx.fillText(this.code, 40, 50);
-      if (this.config.back.stroke) {
-        ctx.strokeStyle = this.config.back.stroke;
-        for (var i = 0; i < 150; i++) {
-          ctx.moveTo(Math.random() * 300, Math.random() * 300);
-          ctx.lineTo(Math.random() * 300, Math.random() * 300);
+        captcahCanvas.style.letterSpacing = 15 + "px";
+        ctx.font = this.config.font.size + " " + this.config.font.family;
+        ctx.fillStyle = this.config.font.color;
+        ctx.textBaseline = "middle";
+        ctx.fillText(this.code, 40, 50);
+        if (this.config.back.stroke) {
+          ctx.strokeStyle = this.config.back.stroke;
+          for (var i = 0; i < 150; i++) {
+            ctx.moveTo(Math.random() * 300, Math.random() * 300);
+            ctx.lineTo(Math.random() * 300, Math.random() * 300);
+          }
+          ctx.stroke();
         }
-        ctx.stroke();
-      }
-
       // this.captchaCode.emit(char);
     }, 100);
   }
