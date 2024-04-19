@@ -5,24 +5,24 @@
         <h1>Cadastrar</h1>
         <div class="example-full-width">
           <label class="text">Usuário</label>
-          <input matInput formControlName="userName" placeholder="Usuário" name="usuario">
           <div *ngIf="newUserForm.get('userName')?.errors?.['required']" class="textObr">Campo obrigatório</div>
+          <input matInput formControlName="userName" placeholder="Usuário" name="usuario">
         </div>
         <div class="example-full-width">
           <label class="text">E-mail</label>
-          <input matInput formControlName="email" placeholder="E-mail">
           <div *ngIf="newUserForm.get('email')?.errors?.['required']" class="textObr">Campo obrigatório</div>
           <div *ngIf="newUserForm.get('email')?.errors?.['email']" class="textObr">E-mail incorreto.</div>
+          <input matInput formControlName="email" placeholder="E-mail">
         </div>
         <div class="example-full-width">
           <label class="text">Senha</label>
-          <input type="password" matInput formControlName="password" placeholder="**********">
           <div *ngIf="newUserForm.get('password')?.errors?.['required']" class="textObr">Campo obrigatório</div>
+          <input type="password" matInput formControlName="password" placeholder="**********">
         </div>
         <div class="example-full-width">
           <label class="text">Confirmar Senha</label>
-          <input type="password" matInput formControlName="repassword" placeholder="**********">
           <div *ngIf="newUserForm.get('repassword')?.errors?.['required']" class="textObr">Campo obrigatório</div>
+          <input type="password" matInput formControlName="repassword" placeholder="**********">
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="newUserForm.invalid">Cadastrar</button>
         <p>Já é um usuário? <a [routerLink]="['/user/login']"> Faça Login</a></p>
@@ -39,8 +39,10 @@
             <a href="#" class="icon"><img class="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"></a>
             <a href="#" class="icon"><img class="linkedin" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"></a>
           </div>
+          <div>
+            <app-recaptcha class="captcha" [config]="captchaConfig"></app-recaptcha>
+          </div>
         </div>
-        <app-recaptcha [config]="captchaConfig"></app-recaptcha>
       </div>
     </div>
   </div>

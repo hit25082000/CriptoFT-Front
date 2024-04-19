@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-//import { HomeService } from './home.service';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { HomeService } from './home.service';
+
 
 interface News {
   title: string;
   url: string;
+}
+interface Crypto {
+  symbol: string;
+  icon: string;
+  price: number;
 }
 
 @Component({
@@ -15,7 +22,9 @@ interface News {
   styleUrl: './home.component.scss'
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  cryptos: Crypto[] = [];
+
   videos = [
     {
       title: 'CURSO CRIPTOMOEDAS PARA INICIANTES - AULA 01',
@@ -98,5 +107,35 @@ export class HomeComponent {
     }
   }
 
-  constructor() {}
+  constructor(private http: HttpClient, private homeService: HomeService) {}
+
+  ngOnInit(): void {
+    if (this.homeService.checkRateLimit()) {
+      this.fetchCryptoData();
+    } else {
+      console.error('Limite de taxa excedido. Espere até a próxima hora para fazer mais solicitações.');
+    }
+  }
+
+  fetchCryptoData() {
+    const params = new HttpParams()
+      .set('vs_currency', 'usd')
+      .set('order', 'market_cap_desc')
+      .set('per_page', '10')
+      .set('page', '1');
+
+    this.http.get<any>('https://api.coingecko.com/api/v3/coins/markets', { params: params }).subscribe(
+      (response) => {
+        this.cryptos = response.map((crypto: any) => ({
+          symbol: crypto.symbol.toUpperCase(),
+          icon: crypto.image,
+          price: parseFloat(crypto.current_price).toFixed(2)
+        }));
+        this.homeService.incrementRequestsMade();
+      },
+      (error) => {
+        console.error('Erro ao obter dados de criptomoedas:', error);
+      }
+    );
+  }
 }

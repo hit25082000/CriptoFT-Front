@@ -1,5 +1,15 @@
 <div class="container">
   <div class="crypto-roulette">
+    <div *ngFor="let crypto of cryptos" class="crypto-item">
+      <img class="crypto-icon" [src]="crypto.icon" alt="Icon">
+      <span class="crypto-symbol">{{ crypto.symbol.toUpperCase()  }}</span>
+      <span class="crypto-price">$ {{ crypto.price }}</span>
+    </div>
+    <div *ngFor="let crypto of cryptos" class="crypto-item">
+      <img class="crypto-icon" [src]="crypto.icon" alt="Icon">
+      <span class="crypto-symbol">{{ crypto.symbol.toUpperCase()  }}</span>
+      <span class="crypto-price">$ {{ crypto.price }}</span>
+    </div>
   </div>
 
   <img src="..\..\assets\img\IF_Criptoativos.png" alt="Imagem" class="banner-image">

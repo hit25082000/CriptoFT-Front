@@ -12,8 +12,8 @@
           <label class="text">Senha</label>
           <input type="password" matInput formControlName="senha" placeholder="**********" name="password">
         </div>
-        <app-recaptcha [config]="captchaConfig"></app-recaptcha>
-        <div class="textObr" *ngIf="loginForm.get('userName')?.errors?.['required']">Campo obrigatório</div>
+        <app-recaptcha class="captcha" [config]="captchaConfig"></app-recaptcha>
+        <div class="textObr" *ngIf="loginForm.get('captcha')?.errors?.['required']">Campo obrigatório</div>
         <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Logar</button>
         <p><span> Esqueceu sua senha ? <a [routerLink]="['solicitar-reset-senha']">Esqueci minha senha!</a></span></p>
       </form>
