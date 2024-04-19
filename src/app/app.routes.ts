@@ -5,6 +5,7 @@ import { NewsComponent } from './main/news/news.component';
 import { LoginComponent } from './main/user/login/login.component';
 import { UserComponent } from './main/user/user.component';
 import { SigninComponent } from './main/user/signin/signin.component';
+import { ClassroomComponent } from './main/classroom/classroom.component';
 
 export const routes: Routes = [
   {path: '',
@@ -13,6 +14,8 @@ export const routes: Routes = [
    component: HomeComponent},
   {path: 'news',
   component: NewsComponent},
+  {path: 'classroom',
+  component: ClassroomComponent},
   {
     path: 'user',
     component: UserComponent,

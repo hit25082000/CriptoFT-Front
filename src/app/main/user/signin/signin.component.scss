@@ -3,8 +3,6 @@
   justify-content: space-between;
   border: 2px solid #6d6c6c;
   background-color: #fff;
-  width: 1080px;
-  height: 600px;
   margin: 0 auto;
 }
 
@@ -15,12 +13,11 @@ form {
   width: 315px;
   max-height: 600px;
   margin: 0 auto;
-  gap: 20px;
+  gap: 10px;
 }
 
 form h1 {
   font-size: 30px;
-  margin-bottom: 20px;
 }
 
 .entradas {
@@ -30,7 +27,6 @@ form h1 {
 }
 
 .entradas input {
-  height: 40px;
   border-radius: 10px;
   padding: 0 10px;
   font-size: 20px;

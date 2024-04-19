@@ -1,5 +1,5 @@
 <div class="paginaSignin">
-  <form class="form mt-4" [formGroup]="newUserForm" (submit)="signin()">
+  <form class="form " [formGroup]="newUserForm" (submit)="signin()">
     <h1>Crie sua Conta</h1>
     <div class="entradas">
       <label class="text" for="">Usuário</label>
@@ -126,7 +126,7 @@
     </button>
     <p class="textos">
       Já é um usuário?
-      <a [routerLink]="['login']"> Faça Login</a>
+      <a [routerLink]="['/user/login']"> Faça Login</a>
     </p>
   </form>
 

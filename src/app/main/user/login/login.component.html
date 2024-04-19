@@ -1,6 +1,6 @@
 <div class="paginaLogin">
-  <form class="form mt-4" (ngSubmit)="login()" [formGroup]="loginForm">
-    <h1>Benvindo ao CriptoFT</h1>
+  <form class="form" (ngSubmit)="login()" [formGroup]="loginForm">
+    <h1>Bem Vindo ao CriptoFT</h1>
     <div class="entradas">
       <label class="text">Usuário</label>
       <input
@@ -34,7 +34,7 @@
     <p class="textos">
       <span>
         Não é um usuário ?
-        <a [routerLink]="['novousuario']">Cadastre-se!</a></span
+        <a [routerLink]="['/user/signin']">Cadastre-se!</a></span
       >
     </p>
     <p class="textos">

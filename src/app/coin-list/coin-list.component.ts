@@ -16,16 +16,16 @@ export class CoinListComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+
     this.http
       .get('https://api.coinranking.com/v2/coins')
       .subscribe((response: any) => {
         this.coins = response.data.coins;
 
-        this.criptoMoedas = this.coins.slice(0, 12).map((moeda: any) => ({
+        this.criptoMoedas = this.coins.slice(0, 30).map((moeda: any) => ({
           ...moeda,
           price: parseFloat(moeda.price).toFixed(5),
         }));
-        console.log(this.criptoMoedas);
       });
   }
 }

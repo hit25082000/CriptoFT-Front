@@ -1,5 +1,4 @@
 <header>
-  <section>
     <div class="itens">
       <a class="logo">
         <i
@@ -12,11 +11,11 @@
       </a>
       <a class="navbar-text" routerLink="/home">Home</a>
       <a class="navbar-text" routerLink="/news">Noticias</a>
-      <a class="navbar-text" routerLink="/videos">Aulas</a>
+      <a class="navbar-text" routerLink="/classroom">Aulas</a>
       <span class="example-spacer"></span>
     </div>
     <div *ngIf="login" class="user">
       <a class="navbar-text usuario" routerLink="/user">Usuario</a>
     </div>
-  </section>
 </header>
+<app-coin-list></app-coin-list>
