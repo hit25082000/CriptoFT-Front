@@ -11,6 +11,15 @@
 .textObr{
   padding-bottom: 10px;
   font-size: 10px;
+  color: red;
+}
+
+.captcha {
+  display: flex;
+  width: 315px;
+  height: 134px;
+  border: none;
+  border-radius: 10px;
 }
 
 .example-full-width{

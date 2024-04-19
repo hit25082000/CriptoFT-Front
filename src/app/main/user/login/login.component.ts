@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
 export class LoginComponent implements OnInit {
   captchaStatus:any = '';
 
@@ -48,8 +49,8 @@ Sign: any;
     private recaptchaService:RecaptchaService) {
       this.recaptchaService.captchStatus.subscribe((status)=>{
         this.captchaStatus = status;
-         if (status == true) {
-            this.loginForm.get('captcha')!.updateValueAndValidity();
+        if (status == true) {
+          this.loginForm.get('captcha')!.updateValueAndValidity();
         }
       });
     }
@@ -57,11 +58,9 @@ Sign: any;
     ngOnInit(): void {
       this.loginForm = this.formBuilder.group(
         {
-          userName: [
-            '', [Validators.required],
-          ],
+          userName: ['', [Validators.required]],
           senha: ['',Validators.required],
-          captcha: ['', [this.captchaValidator.bind(this)]]
+          captcha: ['', [this.captchaValidator.bind(this)], Validators.required]
         },
     );
   }

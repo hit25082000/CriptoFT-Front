@@ -10,11 +10,21 @@
 
 .textObr{
   font-size: 10px;
+  color: red;
+}
+
+.captcha {
+  display: flex;
+  width: 315px;
+  height: 134px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
 }
 
 .example-full-width{
   width: 250.51px;
-  height: 71.2px;
+  height: 81.2px;
 }
 
 #firstLogin{
