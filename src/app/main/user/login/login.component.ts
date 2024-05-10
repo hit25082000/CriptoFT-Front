@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink} from '@angular/router';
 import { FormBuilder, FormGroup,  ReactiveFormsModule, Validators } from '@angular/forms';
 import { RecaptchaService } from '../../../components/recaptcha/recaptcha.service';
-import { MensageService } from '../../../components/mensage/mensage.service';
 import { AuthenticationService } from './authentication/authentication.service';
 import { TokenService } from './authentication/token.service';
 import { RecaptchaComponent } from '../../../components/recaptcha/recaptcha.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   standalone:true,
@@ -40,7 +39,7 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private mensageService: MensageService,
+    private toast: ToastrService,
     private tokenService: TokenService,
     private recaptchaService:RecaptchaService) {
       this.recaptchaService.captchStatus.subscribe((status)=>{
@@ -76,9 +75,10 @@ export class LoginComponent implements OnInit {
         var token = response[0].message;
         this.tokenService.saveToken(token);
         this.router.navigate(['home']);
+        this.toast.success("Login feito com sucesso!");
       },
       (error: any) => {
-        this.mensageService.ErrorMensage(error);
+        this.toast.error(error);
         console.log(error)
       }
     );

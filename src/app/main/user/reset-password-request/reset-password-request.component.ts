@@ -9,7 +9,7 @@ import {
 import {  Router, RouterLink } from '@angular/router';
 import { MensageComponent } from '../../../components/mensage/mensage.component';
 import { CommonModule } from '@angular/common';
-import { MensageService } from '../../../components/mensage/mensage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset-password-request',
@@ -22,7 +22,7 @@ export class ResetPasswordRequestComponent {
   resetPasswordRequestForm!: FormGroup;
 
   constructor(
-    private mensageService: MensageService,
+    private toast: ToastrService,
     private formBuilder: FormBuilder,
     private router: Router,
     private resetPasswordService: ResetPasswordService
@@ -41,7 +41,7 @@ export class ResetPasswordRequestComponent {
       const form = this.resetPasswordRequestForm.getRawValue();
       this.resetPasswordService.ResetPasswordRequest(form.email).subscribe(
         () => {
-          this.mensageService.SuccessMensage('Solicitação enviada verifique seu E-mail');
+          this.toast.success('Solicitação enviada verifique seu E-mail');
           this.router.navigate(['home/']);
         },
         (e) => {
@@ -49,10 +49,10 @@ export class ResetPasswordRequestComponent {
 
           switch (erros[0].message) {
             case 'Failed : DuplicateUserName':
-              this.mensageService.ErrorMensage('Usúario já cadastrado');
+              this.toast.error('Usúario já cadastrado');
               break;
             default:
-              this.mensageService.SuccessMensage(erros[0].message);
+              this.toast.error(erros[0].message);
               break;
           }
         }

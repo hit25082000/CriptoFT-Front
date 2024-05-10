@@ -7,7 +7,7 @@ import {
   EventEmitter
 } from "@angular/core";
 import {RecaptchaService} from './recaptcha.service';
-import { MensageService } from "../mensage/mensage.service";
+import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from "@angular/common";
 import {  FormsModule } from "@angular/forms";
 @Component({
@@ -25,7 +25,7 @@ export class RecaptchaComponent implements OnChanges {
   resultCode:any = null;
 
   constructor(private recaptchService: RecaptchaService,
-    private mensageService: MensageService){}
+    private toast: ToastrService){}
   ngOnChanges() {
     if (this.config) {
       if (!this.config.font || !this.config.font.size) {
@@ -118,10 +118,10 @@ export class RecaptchaComponent implements OnChanges {
   checkCaptcha() {
     if (this.captch_input != this.resultCode) {
       this.recaptchService.setRecaptchaStatus(false);
-      this.mensageService.ErrorMensage('Captcha errado.');
+      this.toast.error('Captcha errado.');
     } else  {
       this.recaptchService.setRecaptchaStatus(true);
-      this.mensageService.SuccessMensage('Captcha correto.');
+      this.toast.success('Captcha correto.');
     }
   }
 }

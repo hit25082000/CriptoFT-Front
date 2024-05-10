@@ -19,7 +19,7 @@ import {
 } from './password-validator';
 import { MensageComponent } from '../../../components/mensage/mensage.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   standalone: true,
@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit {
   loading = false;
 
   constructor(
-    private mensageService: MensageService,
+    private toast: ToastrService,
     private formBuilder: FormBuilder,
     private signinService: SigninService,
     private router: Router
@@ -74,19 +74,19 @@ export class SigninComponent implements OnInit {
       const novoUsuario = this.newUserForm.getRawValue() as NewUser;
       this.signinService.SigninNewUser(novoUsuario).subscribe(
         () => {
-          this.mensageService.ErrorMensage('Email de confirmação enviado! Verifique seu E-mail');
+          this.toast.success('Email de confirmação enviado! Verifique seu E-mail');
           this.router.navigate(['home']);
         },
         (e) => {
           this.loading = false;
           var erros = e.error.reasons;
-
+          console.log("erro")
           switch (erros[0].message) {
             case 'Failed : DuplicateUserName':
-              this.mensageService.ErrorMensage('Usúario já cadastrado');
+              this.toast.error('Usúario já cadastrado');
               break;
             default:
-              this.mensageService.SuccessMensage(erros[0].message);
+              this.toast.error(erros[0].message);
               break;
           }
         }

@@ -18,7 +18,7 @@ import {
 } from '../signin/password-validator';
 import { MensageComponent } from '../../../components/mensage/mensage.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset-password',
@@ -34,7 +34,7 @@ export class ResetPasswordComponent implements OnInit {
   loading = false;
 
   constructor(
-    private mensageService: MensageService,
+    private toast: ToastrService,
     private formBuilder: FormBuilder,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -76,17 +76,17 @@ export class ResetPasswordComponent implements OnInit {
       this.resetPasswordService.ResetPassword(userResetPassword).subscribe(
         () => {
           this.router.navigate(['home']);
-          this.mensageService.SuccessMensage("Senha alterada com sucesso!");
+          this.toast.success("Senha alterada com sucesso!");
         },
         (e) => {
           var erros = e.error.reasons
 
           switch(erros[0].message){
             case "Failed : DuplicateUserName":
-                this.mensageService.ErrorMensage("Usúario já cadastrado");
+                this.toast.error("Usúario já cadastrado");
               break;
               default:
-                this.mensageService.ErrorMensage(erros[0].message);
+                this.toast.error(erros[0].message);
               break;
           }
         }

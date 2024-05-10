@@ -9,6 +9,7 @@ import { ClassroomComponent } from './main/classroom/classroom.component';
 import { ResetPasswordComponent } from './main/user/reset-password/reset-password.component';
 import { ResetPasswordRequestComponent } from './main/user/reset-password-request/reset-password-request.component';
 import { LogedComponent } from './main/user/loged/loged.component';
+import { ToastalertComponent } from './components/toastalert/toastalert.component';
 
 export const routes: Routes = [
   {path: '',
@@ -50,5 +51,6 @@ export const routes: Routes = [
       },
     ],
   },
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent},
+  {path: 'toast', component: ToastalertComponent}
 ];

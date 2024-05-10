@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { MensageService } from './mensage.service';
+import { Component, inject, OnDestroy, TemplateRef } from '@angular/core';
 
 @Component({
   standalone:true,
@@ -6,11 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './mensage.component.html',
   styleUrls: ['./mensage.component.scss'],
 })
-export class MensageComponent implements OnInit {
-  @Input()
-  mensage = '';
+export class MensageComponent  {
 
-  constructor() {}
-
-  ngOnInit(): void {}
 }

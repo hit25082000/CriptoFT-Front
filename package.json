@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animation": "^4.0.0-beta.8",
     "@angular/animations": "^17.3.0",
     "@angular/common": "^17.3.0",
     "@angular/compiler": "^17.3.0",
@@ -25,6 +26,7 @@
     "bootstrap-icons": "^1.11.3",
     "express": "^4.18.2",
     "jwt-decode": "^4.0.0",
+    "ngx-toastr": "^18.0.0",
     "primeng": "^17.12.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
