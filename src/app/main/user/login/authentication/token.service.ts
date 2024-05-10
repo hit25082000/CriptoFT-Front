@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 const KEY = 'token';
 
@@ -6,8 +6,13 @@ const KEY = 'token';
   providedIn: 'root',
 })
 export class TokenService {
+
   returnToken() {
-    return localStorage.getItem(KEY) ?? '';
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem(KEY) ?? '';
+    } else {
+      return ''
+    }
   }
 
   saveToken(token: string) {

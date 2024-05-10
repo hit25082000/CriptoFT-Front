@@ -1,17 +1,90 @@
-<span class="placeholder col-6"></span>
-<span class="placeholder w-75"></span>
-<span class="placeholder" style="width: 25%;"></span>
+<div *ngIf="!loged" id="placeHolder" class="d-flex flex-row">
+  <span class="placeholder col-6"></span>
+  <span class="placeholder w-75"></span>
+  <span class="placeholder" style="width: 25%;"></span>
 
-<span class="placeholder col-6"></span>
-<span class="placeholder w-75"></span>
-<span class="placeholder" style="width: 25%;"></span>
-<span class="placeholder col-12"></span>
+  <span class="placeholder col-6"></span>
+  <span class="placeholder w-75"></span>
+  <span class="placeholder" style="width: 25%;"></span>
+  <span class="placeholder col-12"></span>
 
-<span class="placeholder col-12 bg-primary"></span>
-<span class="placeholder col-12 bg-secondary"></span>
-<span class="placeholder col-12 bg-success"></span>
-<span class="placeholder col-12 bg-danger"></span>
-<span class="placeholder col-12 bg-warning"></span>
-<span class="placeholder col-12 bg-info"></span>
-<span class="placeholder col-12 bg-light"></span>
-<span class="placeholder col-12 bg-dark"></span>
+  <span class="placeholder col-12 bg-primary"></span>
+  <span class="placeholder col-12 bg-secondary"></span>
+  <span class="placeholder col-12 bg-success"></span>
+  <span class="placeholder col-12 bg-danger"></span>
+  <span class="placeholder col-12 bg-warning"></span>
+  <span class="placeholder col-12 bg-info"></span>
+  <span class="placeholder col-12 bg-light"></span>
+  <span class="placeholder col-12 bg-dark"></span>
+</div>
+
+<div *ngIf="loged" id="placeHolder" class="d-flex flex-row">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Aulas Disponiveis</h2>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://picsum.photos/1000');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Bitcoin e seu potencial</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="../../../assets/img/bitcoin.png" width="32" height="32" alt="">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Wescley</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>4min</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://picsum.photos/2000');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">shiba inu, por que subiu ?</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://cdn.coinranking.com/fiZ4HfnRR/shib.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Wescley</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>5min</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://picsum.photos/1000/1000');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Doge, a influencia de uma pessoa no mercado</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://cdn.coinranking.com/H1arXIuOZ/doge.svg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Wescley</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>10min</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

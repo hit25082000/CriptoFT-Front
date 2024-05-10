@@ -44,6 +44,10 @@ article {
   transition: 1s all cubic-bezier();
   display: flex;
   animation: bannermove $animationSpeed linear infinite;
+
+  *{
+
+  }
 }
 
 div {

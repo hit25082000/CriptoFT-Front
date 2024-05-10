@@ -14,8 +14,11 @@
       <a class="navbar-text" routerLink="/classroom">Aulas</a>
       <span class="example-spacer"></span>
     </div>
-    <div *ngIf="login" class="user">
-      <a class="navbar-text usuario" routerLink="/user">Usuario</a>
+    <div *ngIf="!loged" class="user">
+      <a class="navbar-text usuario" routerLink="/user">Login/Registro</a>
+    </div>
+    <div *ngIf="loged" class="user">
+      <a class="navbar-text usuario" routerLink="/user/loged">Usuario</a>
     </div>
 </header>
 <app-coin-list></app-coin-list>

@@ -23,6 +23,7 @@ export class UserService {
   }
 
   returnUser() {
+    this.decodifyJWT()
     return this.usuarioSubject.asObservable();
   }
 

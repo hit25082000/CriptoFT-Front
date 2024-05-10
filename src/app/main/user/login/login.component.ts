@@ -74,8 +74,8 @@ export class LoginComponent implements OnInit {
     this.authenticationService.authenticate(this.loginForm.get('userName')?.value, this.loginForm.get('senha')?.value).subscribe(
       (response: any) => {
         var token = response[0].message;
-        this.router.navigate(['principal']);
         this.tokenService.saveToken(token);
+        this.router.navigate(['home']);
       },
       (error: any) => {
         this.mensageService.ErrorMensage(error);

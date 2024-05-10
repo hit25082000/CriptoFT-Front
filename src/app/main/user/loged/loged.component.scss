@@ -1,0 +1,46 @@
+.paginaLogin {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #6d6c6c;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+section {
+  margin: 2rem auto;
+}
+
+section h1 {
+  font-size: 30px;
+}
+
+.entradas {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.entradas input {
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 20px;
+  border: 2px solid #6d6c6c;
+}
+
+button {
+  background-color: #3f82f7;
+  color: #fff;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.textos {
+  font-size: 14px;
+}
+
+.imagem img {
+  width: 600px;
+}

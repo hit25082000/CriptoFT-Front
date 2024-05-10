@@ -1,4 +1,5 @@
-import { NewUser } from './new-user';
+import { ResetPasswordService } from './../login/reset-password.service';
+import { UserResetPassword } from './user-reset-password';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -6,9 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
-import { SigninService } from './signin.service';
-import { UserExistsService } from './user-exists.service';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MensageService } from '../../../components/mensage/mensage.service';
 import {
   EqualsPasswordValidator,
@@ -16,34 +15,37 @@ import {
   SpecialCharValidator,
   UperCharValidator,
   UserEqualPasswordValidator,
-} from './password-validator';
+} from '../signin/password-validator';
 import { MensageComponent } from '../../../components/mensage/mensage.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
+  selector: 'app-reset-password',
   standalone: true,
-  imports: [ReactiveFormsModule, MensageComponent, RouterLink, CommonModule],
   providers: [FormBuilder],
-  selector: 'app-novo-usuario',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
+  imports: [ReactiveFormsModule, MensageComponent, RouterLink, CommonModule],
+  templateUrl: './reset-password.component.html',
+  styleUrl: './reset-password.component.scss'
 })
-export class SigninComponent implements OnInit {
-  newUserForm!: FormGroup;
+
+export class ResetPasswordComponent implements OnInit {
+  resetPasswordForm!: FormGroup;
   loading = false;
 
   constructor(
     private mensageService: MensageService,
     private formBuilder: FormBuilder,
-    private signinService: SigninService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private resetPasswordService: ResetPasswordService
   ) {}
 
+
   ngOnInit(): void {
-    this.newUserForm = this.formBuilder.group(
+    this.resetPasswordForm = this.formBuilder.group(
       {
-        userName: ['', [Validators.required]],
+        token: [this.activatedRoute.snapshot.queryParams["token"], [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
         password: [
           '',
@@ -68,25 +70,23 @@ export class SigninComponent implements OnInit {
     );
   }
 
-  signin() {
-
-    if (this.newUserForm.valid) {
-      const novoUsuario = this.newUserForm.getRawValue() as NewUser;
-      this.signinService.SigninNewUser(novoUsuario).subscribe(
+  ResetPassword() {
+    if (this.resetPasswordForm.valid) {
+      const userResetPassword = this.resetPasswordForm.getRawValue() as UserResetPassword;
+      this.resetPasswordService.ResetPassword(userResetPassword).subscribe(
         () => {
-          this.mensageService.ErrorMensage('Email de confirmação enviado! Verifique seu E-mail');
           this.router.navigate(['home']);
+          this.mensageService.SuccessMensage("Senha alterada com sucesso!");
         },
         (e) => {
-          this.loading = false;
-          var erros = e.error.reasons;
+          var erros = e.error.reasons
 
-          switch (erros[0].message) {
-            case 'Failed : DuplicateUserName':
-              this.mensageService.ErrorMensage('Usúario já cadastrado');
+          switch(erros[0].message){
+            case "Failed : DuplicateUserName":
+                this.mensageService.ErrorMensage("Usúario já cadastrado");
               break;
-            default:
-              this.mensageService.SuccessMensage(erros[0].message);
+              default:
+                this.mensageService.ErrorMensage(erros[0].message);
               break;
           }
         }

@@ -6,6 +6,9 @@ import { LoginComponent } from './main/user/login/login.component';
 import { UserComponent } from './main/user/user.component';
 import { SigninComponent } from './main/user/signin/signin.component';
 import { ClassroomComponent } from './main/classroom/classroom.component';
+import { ResetPasswordComponent } from './main/user/reset-password/reset-password.component';
+import { ResetPasswordRequestComponent } from './main/user/reset-password-request/reset-password-request.component';
+import { LogedComponent } from './main/user/loged/loged.component';
 
 export const routes: Routes = [
   {path: '',
@@ -32,6 +35,18 @@ export const routes: Routes = [
       {
         path: 'signin',
         component: SigninComponent,
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordComponent,
+      },
+      {
+        path: 'reset-password-request',
+        component: ResetPasswordRequestComponent,
+      },
+      {
+        path: 'loged',
+        component: LogedComponent,
       },
     ],
   },
