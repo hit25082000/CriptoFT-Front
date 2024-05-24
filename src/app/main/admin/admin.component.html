@@ -1,0 +1,77 @@
+<div class="album mt-4">
+  <div class="container">
+    <h1>Perfis</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card ">
+            <img src="../../../assets/img/perfilDemo.png" alt="">
+        <div class="card-body">
+            <p class="card-text">Perfil principal ativo</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn text-danger btn-sm btn-outline-secondary">Ativado</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#perfilPrincipal">Edit</button>
+                <!-- Modal -->
+                <div class="modal fade" id="perfilPrincipal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="perfilPrincipalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="perfilPrincipalLabel">Editar Perfil Principal</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="d-flex flex-column gap-2">
+                          <h2>Selecionar Imagem tela HOME</h2>
+                          <img width="200" src="../../../assets/img/perfilDemo.png" alt="">
+                          <input type="file" name="" id="">
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card ">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          <div class="card-body">
+            <p class="card-text">Perfil secundario teste</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Ativar</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#perfilTeste">Edit</button>
+                <!-- Modal -->
+                <div class="modal fade" id="perfilTeste" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="perfilTesteLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="perfilTesteLabel">Editar Perfil Teste</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="d-flex flex-column gap-2">
+                          <h2>Selecionar Imagem tela HOME</h2>
+                          <img width="200" src="../../../assets/img/perfilDemo.png" alt="">
+                          <input type="file" name="" id="">
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

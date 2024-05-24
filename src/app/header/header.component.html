@@ -12,13 +12,15 @@
       <a class="navbar-text" routerLink="/home">Home</a>
       <a class="navbar-text" routerLink="/news">Noticias</a>
       <a class="navbar-text" routerLink="/classroom">Aulas</a>
+      <a class="navbar-text text-danger" routerLink="/admin">ADMIN</a>
       <span class="example-spacer"></span>
     </div>
     <div *ngIf="!loged" class="user">
-      <a class="navbar-text usuario" routerLink="/user">Login/Registro</a>
+      <a class="btn btn-secondary me-2 usuario" routerLink="/user/login"> <i class="bi bi-box-arrow-in-right"></i> Login</a>
+      <a class="btn btn-primary  usuario" routerLink="/user/signin"> <i class="bi bi-box-arrow-in-right"></i> Signin</a>
     </div>
     <div *ngIf="loged" class="user">
-      <a class="navbar-text usuario" routerLink="/user/loged">Usuario</a>
+      <button class="btn btn-secondary usuario" routerLink="/user/loged"><i class="bi bi-person-circle"></i> Usuario</button>
     </div>
 </header>
 <app-coin-list></app-coin-list>

@@ -1,4 +1,19 @@
-article{
-  display: flex;
-  gap: 2rem;
+.cards{
+  padding: 2rem;
+}
+
+.img{
+  object-fit: cover;
+  width: 100vw;
+
+  object-position: center;
+}
+
+
+.img-nft {
+  width: 100vw;
+
+  object-fit: scale-down;
+  object-position: center;
+    background-color: #FFDED4;
 }

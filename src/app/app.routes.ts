@@ -10,12 +10,15 @@ import { ResetPasswordComponent } from './main/user/reset-password/reset-passwor
 import { ResetPasswordRequestComponent } from './main/user/reset-password-request/reset-password-request.component';
 import { LogedComponent } from './main/user/loged/loged.component';
 import { ToastalertComponent } from './components/toastalert/toastalert.component';
+import { AdminComponent } from './main/admin/admin.component';
 
 export const routes: Routes = [
   {path: '',
    component: HomeComponent},
   {path: 'home',
    component: HomeComponent},
+  {path: 'admin',
+   component: AdminComponent},
   {path: 'news',
   component: NewsComponent},
   {path: 'classroom',
