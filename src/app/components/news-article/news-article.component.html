@@ -1,0 +1,16 @@
+<div>
+  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary-emphasis">{{theme}}</strong>
+      <ng-content select="h3"></ng-content>
+      <div class="mb-1 text-body-secondary">{{date}}</div>
+      <p class="card-text mb-auto"><ng-content></ng-content></p>
+      <a [href]="url" class="icon-link gap-1 icon-link-hover stretched-link">
+        Saiba Mais
+      </a>
+    </div>
+    <div class="col-auto d-none d-lg-block m-2">
+      <img [src]="imgPath" class="img-fluid" width="200" height="250" alt="">
+    </div>
+  </div>
+</div>

@@ -1,11 +1,11 @@
+import { CourseComponent } from './course/course.component';
 import { TokenService } from './../user/login/authentication/token.service';
 import { environment } from '../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserService } from '../user/login/authentication/user/user.service';
-import { Video } from './Video';
-import { BehaviorSubject } from 'rxjs';
-
+import { Video } from './course/Video';
+import { Course } from './catalog/Course';
 
 
 @Injectable({
@@ -30,5 +30,25 @@ export class ClassroomService {
     });
 
     return video;
+  }
+
+  GetCourseVideos(courseId: number):Video[]{
+    var video: any
+
+    this.http.post(`${environment.ApiUrl}/get-course-videos`,{courseId: courseId}).subscribe((x)=>{
+      video = x
+    });
+
+    return video;
+  }
+
+  GetCourses(){
+    var courses: any;
+
+    this.http.get(`${environment.ApiUrl}/get-courses`).subscribe((x)=>{
+      courses = x
+    });
+
+    return courses;
   }
 }

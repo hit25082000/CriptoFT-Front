@@ -1,0 +1,21 @@
+    <section class="cards">
+      <h1>Cursos Disponiveis</h1>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      @for (course of courses; track course) {
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="img-fluid" width="100%" height="225" src="../../../../assets/img/bitcoinPn.png" alt="">
+            <div class="card-body">
+              <p class="card-text">{{course.Description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/classroom/course', course.Id]">Ver Curso</a>
+                </div>
+                <small class="text-body-secondary">{{course.DurationMin}} mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+      </div>
+    </section>

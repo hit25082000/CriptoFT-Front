@@ -2,35 +2,18 @@
   <article>
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <div class="carousel-indicators">
+        @for (item of carrossel; track $index) {}
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
       </div>
       <div class="carousel-inner">
+        @for (item of carrossel; track $index) {}
         <div class="carousel-item active">
-          <img height="400" src="../../../assets/img/ethereumcarolsel.jpg" class="img" alt="...">
+          <img height="400"  class="img" alt="...">
           <div class="container">
             <div class="carousel-caption text-start">
-              <h5 class="card-title">Tecnologia crescente Ethereum</h5>
-<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#Ethereum">
-  Ver artigo
-</button>
-<div class="modal fade" id="Ethereum" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="EthereumLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5 text-dark" id="EthereumLabel">O Ethereum e sua tecnologia</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-dark">
-        O Ethereum e sua tecnologia impactam diretemente no mercado...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
+              <h5 class="card-title bg-secondary border">Ethereum é uma rede de computadores em todo o mundo que segue um conjunto de regras chamado protocolo Ethereum.</h5>
             </div>
           </div>
         </div>
@@ -38,26 +21,8 @@
           <img  height="400" src="../../../assets/img/bitcoincarolsel.jpg" class="img" alt="...">
           <div class="container">
             <div class="carousel-caption">
-              <h5 class="card-title">Futuro do Bitcoin</h5>
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Ver artigo
-              </button>
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">Futuro do Bitcoin</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-dark">
-                      Muitos pensam que o Bitcoin tem uma data de validade ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h5 class="card-title bg-secondary border">Bitcoin é uma criptomoeda descentralizada e de código aberto, um dinheiro eletrônico para transações financeiras ponto a ponto.
+                 </h5>
             </div>
           </div>
         </div>
@@ -65,26 +30,7 @@
           <img  height="400" src="../../../assets/img/nftcarolsel.jpg" class="img-nft" alt="...">
           <div class="container">
             <div class="carousel-caption">
-              <h5 class="card-title">a volta das NFTs</h5>
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#NFTmodal">
-                Ver artigo
-              </button>
-              <div class="modal fade" id="NFTmodal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="NFTmodalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 text-dark" id="NFTmodalLabel">Futuro do Bitcoin</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-dark">
-                      Muitos pensam que o Bitcoin tem uma data de validade ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h5 class="card-title bg-secondary border">O que são NFT's aprenda mais sobre como criar, vender e comprar.</h5>
             </div>
           </div>
         </div>
@@ -101,63 +47,40 @@
   </article>
 </section>
 
-
-
 <section class="mt-4">
   <div class="container marketing">
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-        <img  width="140" height="140"  src="../../../assets/img/mark.jpg" class="rounded-circle border" alt="...">
-        <h2 class="fw-normal">Mark Zuckerberg</h2>
-        <p>Metaverso.</p>
-        <p><a class="btn btn-secondary" href="#">Ver mais »</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
+    <div class="d-flex row mb-2">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Potencial economico da LUA. <span class="text-body-secondary">vai explodir sua cabeça</span></h2>
-        <p class="lead"> ... </p>
-      </div>
-      <div class="col-md-5">
-        <img width="500" height="500" src="https://picsum.photos/1000/1000" alt="">
-      </div>
+      <news-article
+      theme="Web 3"
+      date="Nov 12"
+      url=""
+      imgPath="../../../assets/img/RandomBitcoin.jpg">
+      <h3 class="mb-0">O futuro da web</h3>
+      Com a chegada da Web 3 a internet vai mudar completamente.
+      </news-article>
+
+      <news-article
+      theme="CriptoMoeda"
+      date="Nov 11"
+      url=""
+      imgPath="../../../assets/img/eth.png">
+      <h3 class="mb-0">Possivel <span class="text-danger">ALTA</span>em Moedas Eth.</h3>
+      A cadeia de moedas de Ethereum pode ter uma alta inesperada pelo mercado.
+      </news-article>
+
+      <news-article
+      theme="Mercado"
+      date="Nov 12"
+      url=""
+      imgPath="../../../assets/img/bitcoinPn.png">
+      <h3 class="mb-0">Fim do Bitcoin</h3>
+      Ultimas minerações de Bitcoin a caminho, o Bitcoin vai acabar ?
+      </news-article>
+
     </div>
-
     <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
   </div>
 </section>
 

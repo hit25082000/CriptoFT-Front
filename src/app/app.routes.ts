@@ -1,3 +1,4 @@
+import { Course } from './main/classroom/catalog/Course';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './main/home/home.component';
@@ -11,6 +12,8 @@ import { ResetPasswordRequestComponent } from './main/user/reset-password-reques
 import { LogedComponent } from './main/user/loged/loged.component';
 import { ToastalertComponent } from './components/toastalert/toastalert.component';
 import { AdminComponent } from './main/admin/admin.component';
+import { CatalogComponent } from './main/classroom/catalog/catalog.component';
+import { CourseComponent } from './main/classroom/course/course.component';
 
 export const routes: Routes = [
   {path: '',
@@ -22,7 +25,23 @@ export const routes: Routes = [
   {path: 'news',
   component: NewsComponent},
   {path: 'classroom',
-  component: ClassroomComponent},
+  component: ClassroomComponent,
+  children: [
+    {
+      path: '',
+      redirectTo: 'catalog',
+      pathMatch: 'full'
+    },
+    {
+      path: 'course/:id',
+      component: CourseComponent,
+    },
+    {
+      path: 'catalog',
+      component: CatalogComponent,
+    },
+  ]
+  },
   {
     path: 'user',
     component: UserComponent,
