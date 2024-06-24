@@ -1,8 +1,8 @@
 import { User } from "../../user/login/authentication/user/user";
 
 export interface Video {
-  Titulo?: string;
-  Descricao?: string;
+  Title?: string;
+  Description?: string;
   VideoUrl?: string;
-  Data?: string;
+  Date?: string;
 }

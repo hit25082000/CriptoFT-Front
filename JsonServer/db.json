@@ -18,11 +18,6 @@
       "id": 1,
       "VideoUrl": "https://www.youtube.com/embed/aLh2mV4YhTQ?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj",
       "Descricao": "Começando bem"
-    },
-    {
-      "id": 1,
-      "Descricao": "BlockChains",
-      "VideoUrl": "https://www.youtube.com/embed/05OEeim1dmE?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj"
     }
   ],
   "get-articles": [

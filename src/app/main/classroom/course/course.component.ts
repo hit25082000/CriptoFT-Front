@@ -22,16 +22,19 @@ export class CourseComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,private classroomService: ClassroomService){
   }
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.courseId = params['id']
     })
 
-    this.getCourseVideos()
-  }
+    var videos = this.classroomService.GetCourseVideos(this.courseId)
 
-  getCourseVideos(){
-    this.videos = this.classroomService.GetCourseVideos(this.courseId);
+    if (videos == null) {
+      this.videos = JSON.parse(localStorage.getItem('videos') ?? '')
+    } else {
+      localStorage.setItem('videos', JSON.stringify(videos));
+      this.videos = videos;
+    }
   }
 
   changeVideo(index: number){
