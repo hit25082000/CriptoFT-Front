@@ -1,3 +1,4 @@
+import { Subscribable } from 'rxjs';
 import { ClassroomService } from './../classroom/classroom.service';
 import { Component, OnInit } from '@angular/core';
 import { NewsArticleComponent } from '../../components/news-article/news-article.component';
@@ -11,7 +12,7 @@ import { NewsService } from './news.service';
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss'
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit{
   carrossel = []
   articles: Article[] = []
 
@@ -19,6 +20,13 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articles = this.newsService.GetArticles();
+    var articles = this.newsService.GetArticles()
+
+    if (articles == null) {
+      this.articles = JSON.parse(localStorage.getItem('articles') ?? '')
+    } else {
+      localStorage.setItem('articles', JSON.stringify(articles));
+      this.articles = articles;
+    }
   }
 }
