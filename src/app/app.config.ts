@@ -5,10 +5,10 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { IMAGE_CONFIG } from '@angular/common';
 import { provideToastr } from 'ngx-toastr';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes,withComponentInputBinding()), provideClientHydration(),provideHttpClient(withFetch()),provideToastr(),provideAnimations(),
+  providers: [provideRouter(routes,withComponentInputBinding()), provideClientHydration(),provideHttpClient(withFetch()),provideToastr(),provideAnimationsAsync(),
     {
       provide: IMAGE_CONFIG,
       useValue: {

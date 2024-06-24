@@ -3,43 +3,94 @@
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <div class="carousel-indicators">
         @for (item of carrossel; track $index) {}
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-label="Slide 1"
+          aria-current="true"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          class=""
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          class=""
+        ></button>
       </div>
       <div class="carousel-inner">
         @for (item of carrossel; track $index) {}
         <div class="carousel-item active">
-          <img height="400"  class="img" alt="...">
+          <img
+            height="400"
+            src="../../../assets/img/ethereumcarolsel.jpg"
+            class="img"
+            alt="..."
+          />
           <div class="container">
             <div class="carousel-caption text-start">
-              <h5 class="card-title bg-secondary border">Ethereum é uma rede de computadores em todo o mundo que segue um conjunto de regras chamado protocolo Ethereum.</h5>
+              <h5 class="card-title bg-secondary border">
+                Ethereum é uma rede de computadores em todo o mundo que segue um
+                conjunto de regras chamado protocolo Ethereum.
+              </h5>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img  height="400" src="../../../assets/img/bitcoincarolsel.jpg" class="img" alt="...">
+          <img
+            height="400"
+            src="../../../assets/img/bitcoincarolsel.jpg"
+            class="img"
+            alt="..."
+          />
           <div class="container">
             <div class="carousel-caption">
-              <h5 class="card-title bg-secondary border">Bitcoin é uma criptomoeda descentralizada e de código aberto, um dinheiro eletrônico para transações financeiras ponto a ponto.
-                 </h5>
+              <h5 class="card-title bg-secondary border">
+                Bitcoin é uma criptomoeda descentralizada e de código aberto, um
+                dinheiro eletrônico para transações financeiras ponto a ponto.
+              </h5>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img  height="400" src="../../../assets/img/nftcarolsel.jpg" class="img-nft" alt="...">
+          <img
+            height="400"
+            src="../../../assets/img/nftcarolsel.jpg"
+            class="img-nft"
+            alt="..."
+          />
           <div class="container">
             <div class="carousel-caption">
-              <h5 class="card-title bg-secondary border">O que são NFT's aprenda mais sobre como criar, vender e comprar.</h5>
+              <h5 class="card-title bg-secondary border">
+                O que são NFT's aprenda mais sobre como criar, vender e comprar.
+              </h5>
             </div>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -49,38 +100,52 @@
 
 <section class="mt-4">
   <div class="container marketing">
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" />
     <div class="d-flex row mb-2">
-
+      @for (item of articles; track $index) {
       <news-article
-      theme="Web 3"
-      date="Nov 12"
-      url=""
-      imgPath="../../../assets/img/RandomBitcoin.jpg">
-      <h3 class="mb-0">O futuro da web</h3>
-      Com a chegada da Web 3 a internet vai mudar completamente.
+        theme="{{ item.Theme }}"
+        date="{{ item.Date }}"
+        url="{{ item.Url }}"
+        imgPath="../../../assets/img/{{ item.ImgPath }}"
+      >
+        <h3 class="mb-0">{{ item.Title }}</h3>
+        {{ item.Description }}
+      </news-article>
+      }
+      <news-article
+        theme="Web 3"
+        date="Nov 12"
+        url=""
+        imgPath="../../../assets/img/RandomBitcoin.jpg"
+      >
+        <h3 class="mb-0">O futuro da web</h3>
+        Com a chegada da Web 3 a internet vai mudar completamente.
       </news-article>
 
       <news-article
-      theme="CriptoMoeda"
-      date="Nov 11"
-      url=""
-      imgPath="../../../assets/img/eth.png">
-      <h3 class="mb-0">Possivel <span class="text-danger">ALTA</span>em Moedas Eth.</h3>
-      A cadeia de moedas de Ethereum pode ter uma alta inesperada pelo mercado.
+        theme="CriptoMoeda"
+        date="Nov 11"
+        url=""
+        imgPath="../../../assets/img/eth.png"
+      >
+        <h3 class="mb-0">
+          Possivel <span class="text-danger">ALTA</span>em Moedas Eth.
+        </h3>
+        A cadeia de moedas de Ethereum pode ter uma alta inesperada pelo
+        mercado.
       </news-article>
 
       <news-article
-      theme="Mercado"
-      date="Nov 12"
-      url=""
-      imgPath="../../../assets/img/bitcoinPn.png">
-      <h3 class="mb-0">Fim do Bitcoin</h3>
-      Ultimas minerações de Bitcoin a caminho, o Bitcoin vai acabar ?
+        theme="Mercado"
+        date="Nov 12"
+        url=""
+        imgPath="../../../assets/img/bitcoinPn.png"
+      >
+        <h3 class="mb-0">Fim do Bitcoin</h3>
+        Ultimas minerações de Bitcoin a caminho, o Bitcoin vai acabar ?
       </news-article>
-
     </div>
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" />
   </div>
 </section>
-

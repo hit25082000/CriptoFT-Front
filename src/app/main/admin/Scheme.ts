@@ -1,4 +1,4 @@
-import { Article } from "./Article";
+import { Article } from "../news/Article";
 
 export interface Scheme {
   Name?: string;

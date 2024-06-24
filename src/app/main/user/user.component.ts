@@ -10,5 +10,4 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
-
 }

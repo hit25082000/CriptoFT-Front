@@ -13,14 +13,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './catalog.component.scss'
 })
 export class CatalogComponent {
-  courses: Course[] = [{Description:"Curso para iniciantes no mercado de CriptoMoedas.",Id:1,Thumbnail:"bitcoinPn.png",DurationMin:10}]
+  courses: Course[] = []
 
   constructor(private classroomService: ClassroomService,private userService: UserService){}
 
   ngOnInit(): void {
+    this.GetCourses()
   }
 
-  async GetCourses(){
+  GetCourses(){
     this.courses = this.classroomService.GetCourses();
   }
 }

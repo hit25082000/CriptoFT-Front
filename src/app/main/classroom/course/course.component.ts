@@ -13,10 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class CourseComponent implements OnInit {
 
   courseId = this.activatedRoute.snapshot.queryParams["id"]
-  videos: Video[] = [{VideoUrl: "https://www.youtube.com/embed/aLh2mV4YhTQ?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj" , Descricao: "Começando bem"},{Descricao: "BlockChains", VideoUrl: "https://www.youtube.com/embed/05OEeim1dmE?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj"}]
+  videos: Video[] = []
   activeIndex = 0;
   video: Video = {
-    VideoUrl: "https://www.youtube.com/embed/aLh2mV4YhTQ?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj"
+    VideoUrl: ""
   };
 
   constructor(private activatedRoute: ActivatedRoute,private classroomService: ClassroomService){
@@ -25,7 +25,10 @@ export class CourseComponent implements OnInit {
   ngOnInit(){
     this.activatedRoute.params.subscribe(params => {
       this.courseId = params['id']
-  })}
+    })
+
+    this.getCourseVideos()
+  }
 
   getCourseVideos(){
     this.videos = this.classroomService.GetCourseVideos(this.courseId);

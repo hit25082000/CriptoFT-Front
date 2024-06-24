@@ -33,19 +33,19 @@ export class ClassroomService {
   }
 
   GetCourseVideos(courseId: number):Video[]{
-    var video: any
+    var videos: any
 
-    this.http.post(`${environment.ApiUrl}/get-course-videos`,{courseId: courseId}).subscribe((x)=>{
-      video = x
+    this.http.get(`${environment.JsonUrl}/get-course-videos/${courseId}`).subscribe((x)=>{
+      videos = x
     });
-
-    return video;
+    console.log(videos)
+    return videos;
   }
 
   GetCourses(){
     var courses: any;
 
-    this.http.get(`${environment.ApiUrl}/get-courses`).subscribe((x)=>{
+    this.http.get(`${environment.JsonUrl}/get-courses`).subscribe((x)=>{
       courses = x
     });
 

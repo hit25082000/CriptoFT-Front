@@ -1,0 +1,70 @@
+{
+  "get-courses": [
+    {
+      "Description": "Curso para iniciantes no mercado de CriptoMoedas.",
+      "Id": 1,
+      "Thumbnail": "bitcoinPn.png",
+      "DurationMin": 10
+    },
+    {
+      "Description": "Curso para iniciantes no mercado de CriptoMoedas 2",
+      "Id": 2,
+      "Thumbnail": "bitcoinPn.png",
+      "DurationMin": 10
+    }
+  ],
+  "get-course-videos?1": [
+    {
+      "id": 1,
+      "VideoUrl": "https://www.youtube.com/embed/aLh2mV4YhTQ?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj",
+      "Descricao": "Começando bem"
+    },
+    {
+      "id": 1,
+      "Descricao": "BlockChains",
+      "VideoUrl": "https://www.youtube.com/embed/05OEeim1dmE?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj"
+    }
+  ],
+  "get-articles": [
+    {
+      "Title": "Australia",
+      "Theme": "Mercado",
+      "Date": "11/05",
+      "Url": "...",
+      "ImgPath": "../../../assets/img/bitcoin.png",
+      "Description": "balb bla bla"
+    },
+    {
+      "Title": "Australia",
+      "Theme": "Mercado",
+      "Date": "11/05",
+      "Url": "...",
+      "ImgPath": "../../../assets/img/bitcoin.png",
+      "Description": "balb bla bla"
+    },
+    {
+      "Title": "Australia",
+      "Theme": "Mercado",
+      "Date": "11/05",
+      "Url": "...",
+      "ImgPath": "../../../assets/img/bitcoin.png",
+      "Description": "balb bla bla"
+    },
+    {
+      "Title": "Australia",
+      "Theme": "Mercado",
+      "Date": "11/05",
+      "Url": "...",
+      "ImgPath": "../../../assets/img/bitcoin.png",
+      "Description": "balb bla bla"
+    },
+    {
+      "Title": "Australia",
+      "Theme": "Mercado",
+      "Date": "11/05",
+      "Url": "...",
+      "ImgPath": "../../../assets/img/bitcoin.png",
+      "Description": "balb bla bla"
+    }
+  ]
+}

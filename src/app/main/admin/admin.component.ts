@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  FormBuilder,  FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { Article } from './Article';
+import { Article } from '../news/Article';
 import { TemplateService } from './template.service';
 import { Title } from '@angular/platform-browser';
 import { Scheme } from './Scheme';
@@ -19,12 +19,16 @@ export class AdminComponent implements OnInit{
   schemes: Scheme[] = [{Name:"Principal"},{Name:"Segundario"}]
   activeIndex = 0
   articles: Article[] = [
-    { Title: 'Australia'},
-    { Title: 'Brazil'},
-    { Title: 'China'},
-    { Title: 'Egypt'},
-    { Title: 'France'}
-];;
+    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
+    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
+    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
+    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
+    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
+
+  ];;
+
+
+
   selectedArticle!: Article;
 
   constructor(private formBuilder: FormBuilder,
