@@ -20,13 +20,17 @@ export class NewsComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    var articles = this.newsService.GetArticles()
+    this.newsService.GetArticles().subscribe((data: Article[]) => {
+      if (data == null) {
+        this.articles = JSON.parse(localStorage.getItem('articles') ?? '')
+      } else {
+        localStorage.setItem('articles', JSON.stringify(data));
+        this.articles = data;
+      }
+      console.log(data)
+      this.articles = data;
 
-    if (articles == null) {
-      this.articles = JSON.parse(localStorage.getItem('articles') ?? '')
-    } else {
-      localStorage.setItem('articles', JSON.stringify(articles));
-      this.articles = articles;
-    }
+      console.log(this.articles)
+    });
   }
 }

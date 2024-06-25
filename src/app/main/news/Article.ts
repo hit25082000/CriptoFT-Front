@@ -1,8 +1,8 @@
 export interface Article {
-  Theme: string;
-  Date: string;
-  Url: string;
-  ImgPath: string;
-  Title: string;
-  Description: string;
+  theme: string;
+  date: string;
+  url: string;
+  imgPath: string;
+  title: string;
+  description: string;
 }

@@ -104,13 +104,13 @@
     <div class="d-flex row mb-2">
       @for (item of articles; track $index) {
       <news-article
-        theme="{{ item.Theme }}"
-        date="{{ item.Date }}"
-        url="{{ item.Url }}"
-        imgPath="../../../assets/img/{{ item.ImgPath }}"
+        theme="{{ item.theme }}"
+        date="{{ item.date }}"
+        url="{{ item.url }}"
+        imgPath="../../../assets/img/{{ item.imgPath }}"
       >
-        <h3 class="mb-0">{{ item.Title }}</h3>
-        {{ item.Description }}
+        <h3 class="mb-0">{{ item.title }}</h3>
+        {{ item.description }}
       </news-article>
       }
     </div>

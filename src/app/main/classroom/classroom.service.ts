@@ -32,23 +32,11 @@ export class ClassroomService {
     return video;
   }
 
-  GetCourseVideos(courseId: number):Video[]{
-    var videos: any
-
-    this.http.get(`${environment.JsonUrl}/get-course-videos/${courseId}`).subscribe((x)=>{
-      videos = x
-    });
-    console.log(videos)
-    return videos;
+  GetCourseVideos(courseId: number){
+    return this.http.get<Video[]>(`${environment.ApiUrl}/get-course-videos/${courseId}`)
   }
 
   GetCourses(){
-    var courses: any;
-
-    this.http.get(`${environment.JsonUrl}/get-courses`).subscribe((x)=>{
-      courses = x
-    });
-
-    return courses;
+    return this.http.get<Course[]>(`${environment.ApiUrl}/get-courses`)
   }
 }

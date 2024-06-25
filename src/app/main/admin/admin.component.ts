@@ -18,14 +18,7 @@ export class AdminComponent implements OnInit{
   formGroup!: FormGroup;
   schemes: Scheme[] = [{Name:"Principal"},{Name:"Segundario"}]
   activeIndex = 0
-  articles: Article[] = [
-    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
-    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
-    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
-    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
-    { Title: 'Australia',Theme: 'Mercado', Date: '11/05', Url: '...',ImgPath:'../../../assets/img/bitcoin.png',Description:'balb bla bla'},
-
-  ];;
+  articles: Article[] = [];;
 
 
 

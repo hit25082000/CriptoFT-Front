@@ -27,15 +27,15 @@ export class CourseComponent implements OnInit {
       this.courseId = params['id']
     })
 
-    var videos = this.classroomService.GetCourseVideos(this.courseId)
-
-    if (videos == null) {
-      this.videos = JSON.parse(localStorage.getItem('videos') ?? '')
-    } else {
-      localStorage.setItem('videos', JSON.stringify(videos));
-      this.videos = videos;
+    var videos = this.classroomService.GetCourseVideos(this.courseId).subscribe((data: Video[]) => {
+      if (data == null) {
+        this.videos = JSON.parse(localStorage.getItem('videos') ?? '')
+      } else {
+        localStorage.setItem('videos', JSON.stringify(data));
+        this.videos = data;
+      }
+    });
     }
-  }
 
   changeVideo(index: number){
     this.video = this.videos[index];

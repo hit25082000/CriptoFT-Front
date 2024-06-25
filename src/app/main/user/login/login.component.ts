@@ -78,8 +78,8 @@ export class LoginComponent implements OnInit {
         this.toast.success("Login feito com sucesso!");
       },
       (error: any) => {
-        this.toast.error(error);
-        console.log(error)
+        this.toast.error(error.error.message);
+        console.log(error.error.message)
       }
     );
   }

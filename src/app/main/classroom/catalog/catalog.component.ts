@@ -18,13 +18,15 @@ export class CatalogComponent implements OnInit {
   constructor(private classroomService: ClassroomService, private userService: UserService) { }
 
   ngOnInit(): void {
-    var courses = this.classroomService.GetCourses()
-
-    if (courses == null) {
+    this.classroomService.GetCourses().subscribe((data: Course[]) => {
+    if (data == null) {
       this.courses = JSON.parse(localStorage.getItem('courses') ?? '')
     } else {
-      localStorage.setItem('courses', JSON.stringify(courses));
-      this.courses = courses;
+      localStorage.setItem('courses', JSON.stringify(data));
+      this.courses = data;
     }
+    this.courses = data;
+  });
   }
+
 }

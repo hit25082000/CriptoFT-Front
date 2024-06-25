@@ -1,0 +1,18 @@
+npx json-server --watch db.json
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -e password=usuariodb -e server=localhost -e password=root -p 3306:3306 -d mysql:latest
+
+insert into
+  `Videos` (`Title`,`Description`,`VideoUrl`,`Date`,`CourseId`)values
+  ('Começando Bem','Video iniciante no catalago','www','2022-12-13','1');
+
+    INSERT INTO `Courses` (Description, Thumb, DurationMin) VALUES
+('Curso para iniciantes no mercado de CriptoMoedas.', 'bitcoinPn.png', 10),
+('Curso para iniciantes no mercado de CriptoMoedas 2', 'bitcoinPn.png', 10);
+
+INSERT INTO `Articles` (Title, Theme, Date, Url, ImgPath, Description) VALUES
+('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
+('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
+('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
+('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
+('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla');

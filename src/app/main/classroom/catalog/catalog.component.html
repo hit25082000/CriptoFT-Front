@@ -12,17 +12,17 @@
           alt=""
         />
         <div class="card-body">
-          <p class="card-text">{{ course.Description }}</p>
+          <p class="card-text">{{ course.description }}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <a
                 class="btn btn-sm btn-outline-secondary"
-                [routerLink]="['/classroom/course', course.Id]"
+                [routerLink]="['/classroom/course', course.id]"
                 >Ver Curso</a
               >
             </div>
             <small class="text-body-secondary"
-              >{{ course.DurationMin }} mins</small
+              >{{ course.durationMin }} mins</small
             >
           </div>
         </div>

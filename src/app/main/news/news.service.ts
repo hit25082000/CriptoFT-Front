@@ -12,13 +12,7 @@ export class NewsService {
 
   constructor(private http: HttpClient,private userService: UserService) {}
 
-  GetArticles():Article[] {
-    var articles: any
-
-    this.http.get(`${environment.JsonUrl}/get-articles`).subscribe((x)=>{
-      articles = x
-    });
-
-    return articles;
+  GetArticles() {
+    return this.http.get<Article[]>(`${environment.ApiUrl}/api/article`)
   }
 }
