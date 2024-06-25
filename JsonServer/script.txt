@@ -2,17 +2,20 @@ npx json-server --watch db.json
 
 docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -e password=usuariodb -e server=localhost -e password=root -p 3306:3306 -d mysql:latest
 
-insert into
-  `Videos` (`Title`,`Description`,`VideoUrl`,`Date`,`CourseId`)values
-  ('Começando Bem','Video iniciante no catalago','www','2022-12-13','1');
+insert into  `Videos` (`Title`,`Description`,`VideoUrl`,`Date`,`CourseId`)values
+  ('O que é Bitcoin?','primeiros passos no mercado','https://www.youtube.com/embed/aLh2mV4YhTQ?list=PLBkmE8K0RM0stkjXnYgesj98sOwNL8iZj','2024-06-25','1'),
+    ('Como investir ?','passo a passo de como investir a primeira vez','https://www.youtube.com/embed/FlTVEhHXVJ8','2024-06-25','1'),
+    ('Como funciona o Ethereum?','qual a tecnologia por tras do ethereum','https://www.youtube.com/embed/qCk0qe6bF0E','2024-06-25','2'),
+    ('Mercado NFT','o que é uma NFT','https://www.youtube.com/embed/MaGM1jMo4GU','2024-06-25','2'),
+     ('o que é o Metaverso?','um universo digital','https://www.youtube.com/embed/BCvBnZ7tDdg','2024-06-25','2');
 
     INSERT INTO `Courses` (Description, Thumb, DurationMin) VALUES
-('Curso para iniciantes no mercado de CriptoMoedas.', 'bitcoinPn.png', 10),
-('Curso para iniciantes no mercado de CriptoMoedas 2', 'bitcoinPn.png', 10);
+('Curso introdução para inciantes', 'bitcoinPn.png', 32),
+('Curso teorico do mercado', 'eth.png', 30);
+
+<iframe width="1857" height="755" src="" title="TUTORIAL: PASSO-A-PASSO PARA INVESTIR EM CRIPTOMOEDAS NA BOLSA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 INSERT INTO `Articles` (Title, Theme, Date, Url, ImgPath, Description) VALUES
-('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
-('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
-('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
-('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla'),
-('Australia', 'Mercado', '2022-11-05', '...', '../../../assets/img/bitcoin.png', 'balb bla bla');
+('Como vai o Bitcoin', 'Mercado', '2024-06-25', 'https://www.coindesk.com/price/bitcoin/', '../../../assets/img/bitcoinPn.png', 'Em junho de 2024, o preço do Bitcoin está em torno de R$ 305.000 (aproximadamente US$ 64.270). A criptomoeda continua sendo adotada como reserva de valor, especialmente em países com alta inflação e instabilidade econômica, como alguns países africanos. El Salvador e a República Centro-Africana são os únicos países que reconhecem o Bitcoin como moeda legal. O interesse institucional permanece alto, com grandes empresas como Tesla e Microstrategy mantendo investimentos significativos em Bitcoin. Além disso, a possível aprovação de ETFs de Bitcoin por grandes instituições financeiras pode impulsionar ainda mais o preço da criptomoeda​ '),
+('Como vai o Ethereum', 'Crypto', '2024-06-25', 'https://www.coindesk.com/price/ethereum/', '../../../assets/img/eth.png', 'O Ethereum está sendo negociado em torno de R$ 15.640 (aproximadamente US$ 3.300). A plataforma continua sendo a principal escolha para aplicações descentralizadas (dApps) e contratos inteligentes. A transição do Ethereum para o Ethereum 2.0, que visa melhorar a escalabilidade e reduzir o consumo de energia, é um desenvolvimento significativo. Esta atualização envolve a mudança do mecanismo de consenso de Proof of Work (PoW) para Proof of Stake (PoS), o que deve aumentar a eficiência e a segurança da rede'),
+('Como vão as NFT's', 'NFT', '2024-06-25', 'https://www.infomoney.com.br/guias/nft-token-nao-fungivel/', '../../../assets/img/RandomBitcoin.jpg', 'Os Tokens Não Fungíveis (NFTs) continuam sendo um setor dinâmico e em rápida evolução dentro do espaço cripto. Eles são usados principalmente em arte digital, colecionáveis e imóveis virtuais. Embora a maioria das transações de NFT ocorra na plataforma Ethereum, outras blockchains como Solana e Tezos também estão ganhando popularidade. O mercado de NFTs tem experimentado flutuações, mas permanece popular devido à sua capacidade única de proporcionar propriedade verificável de ativos digitais'),
