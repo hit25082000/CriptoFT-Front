@@ -8,6 +8,7 @@ import { RecaptchaComponent } from '../../../components/recaptcha/recaptcha.comp
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { timer } from 'rxjs';
 
 @Component({
   standalone:true,
@@ -74,8 +75,10 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         var token = response[0].message;
         this.tokenService.saveToken(token);
-        this.router.navigate(['home']);
         this.toast.success("Login feito com sucesso!");
+        timer(2000).subscribe(() => {
+          this.router.navigate(['home']);
+        });
       },
       (error: any) => {
         this.toast.error(error.error.message);

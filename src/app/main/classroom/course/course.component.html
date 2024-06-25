@@ -7,7 +7,7 @@
       class="list-group-item list-group-item-action active"
       aria-current="true"
     >
-      {{ $index + 1 }} - {{ video.Description }}
+      {{ $index + 1 }} - {{ video.description }}
     </button>
     }@else{
     <button
@@ -15,7 +15,7 @@
       (click)="changeVideo($index)"
       class="list-group-item list-group-item-action"
     >
-      {{ $index + 1 }} - {{ video.Description }}
+      {{ $index + 1 }} - {{ video.description }}
     </button>
     } }
   </div>
@@ -23,8 +23,8 @@
     <iframe
       width="1200"
       height="600"
-      [(src)]="video.VideoUrl"
-      [(title)]="video.Title"
+      [(src)]="video.videoUrl"
+      [(title)]="video.title"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"

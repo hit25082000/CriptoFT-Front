@@ -16,7 +16,7 @@ export class CourseComponent implements OnInit {
   videos: Video[] = []
   activeIndex = 0;
   video: Video = {
-    VideoUrl: ""
+    videoUrl: ""
   };
 
   constructor(private activatedRoute: ActivatedRoute,private classroomService: ClassroomService){
@@ -27,12 +27,13 @@ export class CourseComponent implements OnInit {
       this.courseId = params['id']
     })
 
-    var videos = this.classroomService.GetCourseVideos(this.courseId).subscribe((data: Video[]) => {
+    this.classroomService.GetCourseVideos(this.courseId).subscribe((data: Video[]) => {
       if (data == null) {
         this.videos = JSON.parse(localStorage.getItem('videos') ?? '')
       } else {
         localStorage.setItem('videos', JSON.stringify(data));
         this.videos = data;
+        this.changeVideo(0)
       }
     });
     }

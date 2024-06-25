@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoinListComponent } from '../../components/coin-list/coin-list.component';
 
 @Component({
@@ -9,3 +9,4 @@ import { CoinListComponent } from '../../components/coin-list/coin-list.componen
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {}
+

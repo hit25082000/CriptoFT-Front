@@ -1,5 +1,5 @@
 import { MensageService } from './mensage.service';
-import { Component, inject, OnDestroy, TemplateRef } from '@angular/core';
+import { Component, inject, Input, input, OnDestroy, TemplateRef } from '@angular/core';
 
 @Component({
   standalone:true,
@@ -8,5 +8,5 @@ import { Component, inject, OnDestroy, TemplateRef } from '@angular/core';
   styleUrls: ['./mensage.component.scss'],
 })
 export class MensageComponent  {
-
+  @Input() mensage = ""
 }

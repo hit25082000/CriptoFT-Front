@@ -1,6 +1,6 @@
 export interface Course {
   id?: number;
   description?: string;
-  thumbnail?: string;
+  thumb?: string;
   durationMin?: number;
 }

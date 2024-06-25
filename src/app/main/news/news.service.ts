@@ -13,6 +13,6 @@ export class NewsService {
   constructor(private http: HttpClient,private userService: UserService) {}
 
   GetArticles() {
-    return this.http.get<Article[]>(`${environment.ApiUrl}/api/article`)
+    return this.http.get<Article[]>(`${environment.ApiUrl}/get-articles`)
   }
 }
